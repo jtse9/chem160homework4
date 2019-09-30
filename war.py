@@ -3,12 +3,14 @@ ntrials = 1000
 results=[]
 for i in range(ntrials):
     adeck=deck()
+    bdeck=deck()
     adeck.shuffle()
+    bdeck.shuffle()
     ascore = 0
     bscore = 0
     while adeck.cardsleft()>0:
         acard1=adeck.dealcard()
-        bcard1=adeck.dealcard()
+        bcard1=bdeck.dealcard()
         if acard1.value()>bcard1.value():
             ascore += 2
         if acard1.value()<bcard1.value():
